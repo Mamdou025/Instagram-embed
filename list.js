@@ -154,9 +154,9 @@ Ajouter.onclick=()=>{
         console.log(produits[ind].numvedeur)
 
      })
+     alert("apres code")
 }
 
 
 alert("avant code")
 simplificationdelisteAvecig();
-alert("apres code")
