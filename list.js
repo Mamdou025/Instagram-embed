@@ -79,33 +79,7 @@ function simplificationdeliste(){
      })
 }
 
-
-
-
-
-// déclencheurs et fonction
-Ajouter.onclick=()=>{
-
-    const produitcree = new carteProduit(titresoumis.value,prixsoumis.value,liensoumis.value,descriptionsoumise.value,ratingsoumis.value,Math.floor(Math.random()*100000));
-    produits.push(produitcree);
-
-    simplificationdelisteAvecig();
-    alert("Ajouter apres fonction")
-
-
-}
-
-
-
-
-
-//simplificationdeliste();
-
-
-
-
 //avec button instagram
-
  function simplificationdelisteAvecig(){
 
     let etoilelist = document.createElement('ul');
@@ -166,5 +140,30 @@ Ajouter.onclick=()=>{
 }
 
 
-alert("avant code")
+
+
+// déclencheurs et fonction
+Ajouter.onclick=()=>{
+
+    const produitcree = new carteProduit(titresoumis.value,prixsoumis.value,liensoumis.value,descriptionsoumise.value,ratingsoumis.value,Math.floor(Math.random()*100000));
+    produits.push(produitcree);
+
+    simplificationdelisteAvecig();
+    alert("Ajouter apres fonction")
+
+
+}
+
+
+
+
+
+//simplificationdeliste();
+
+
+
+
+
+
+
 simplificationdelisteAvecig();
