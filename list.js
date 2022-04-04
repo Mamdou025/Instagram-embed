@@ -92,6 +92,7 @@ function simplificationdeliste(){
                   etoilelist.appendChild(etoile)
                   icone.classList.add('fa','fa-star','text-success')
                   etoile.appendChild(icone)
+                  alert("inside2")
               }
 
 
@@ -105,13 +106,13 @@ function simplificationdeliste(){
     }
 
 
-alert("inside 2")
+
     //button whatsapp
      let buttonwhatsapp = `<div><button class="buttonwhatsapp" id="buttonw${produits.indexOf(produits.at(-1))}"><i class="bi bi-whatsapp"></i>   Contacter </button></div>`
      //lien Instagram  : Utiliser le lien fourni a la source
-alert("inside 3")
+
      let blocinstagram = `<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${produits.at(-1).image}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"</iframe></div>`
-alert("inside 4")
+
 
      const listeproduits = document.getElementById('listeproduits') ;
      let produitelement = document.createElement('li');
@@ -126,7 +127,7 @@ alert("inside 4")
      listeproduits.appendChild(produitelement);
      console.log(liensoumis.value)
 
-alert("inside 5")
+
 
 
 
@@ -139,7 +140,7 @@ alert("inside 5")
 
 
      })
-alert("inside 6")
+
 }
 
 
@@ -152,7 +153,7 @@ Ajouter.onclick=()=>{
     produits.push(produitcree);
 
     simplificationdelisteAvecig();
-    alert("inside 0")
+
 
 
 }
