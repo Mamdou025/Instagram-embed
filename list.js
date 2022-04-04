@@ -92,7 +92,7 @@ function simplificationdeliste(){
                   etoilelist.appendChild(etoile)
                   icone.classList.add('fa','fa-star','text-success')
                   etoile.appendChild(icone)
-                  alert("inside2")
+
               }
 
 
