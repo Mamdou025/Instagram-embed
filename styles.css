@@ -1,0 +1,87 @@
+body {
+    background: linear-gradient(to right, #61e06b, #e96920);
+    min-height: 100vh
+}
+
+.text-gray {
+    color: rgb(0, 0, 0)
+}
+
+img {
+    height: 170px;
+    width: 140px
+}
+
+.buttonwhatsapp{
+    
+    border-radius: 6px;
+    height: 35px;
+    width: 150px;
+    background-color: #10c050;
+    
+}
+.buttonwhatsapp:hover{
+    
+    border-radius: 6px;
+    height: 35px;
+    width: 150px;
+    background-color: #097430;
+    
+}
+
+.changeliste{
+    display: flex;
+    width:80%;
+    justify-content: center;
+    background-color: rgb(199, 89, 89);
+    margin: 20px;
+    padding: 10px;
+}
+.row{
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+}
+
+
+.modif{
+    margin: 20px;
+    width: 100%;
+}
+
+.btnabc{
+    margin: 20px;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: rgb(68, 228, 62);
+    margin: 0 auto;
+}
+.image{
+    height: 400px;
+    width: 300px;
+}
+
+
+.bloco{
+    width: 310px;
+    height:500px;
+    border:1px solid rgb(26, 196, 41);
+    box-shadow:3px 6px rgb(116, 112, 112);
+    border-radius: 10px;
+      
+  }
+  
+  .instagram-media.instagram-media-rendered{
+    height:95%;
+    width:95%;
+    position:relative;
+  }
+
+  
+
+  .media-body.order-2.order-lg-1{
+      margin: 20px;
+  }
+
+  .list-group-item{
+      margin: 20px;
+  }
