@@ -81,7 +81,7 @@ function simplificationdeliste(){
 
 //avec button instagram
  function simplificationdelisteAvecig(){
-   alert("inside 1")
+   
 
     let etoilelist = document.createElement('ul');
     etoilelist.classList.add('list-inline','small');
