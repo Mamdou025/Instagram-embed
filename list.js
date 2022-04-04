@@ -80,9 +80,10 @@ function simplificationdeliste(){
 }
 // déclencheurs et fonction
 Ajouter.onclick=()=>{
-   alert("Ajouter")
+   alert("Ajouter avant")
     const produitcree = new carteProduit(titresoumis.value,prixsoumis.value,liensoumis.value,descriptionsoumise.value,ratingsoumis.value,Math.floor(Math.random()*100000));
     produits.push(produitcree);
+     alert("Ajouter entre creation et fonction")
     simplificationdelisteAvecig();
 
 
