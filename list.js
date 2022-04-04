@@ -152,7 +152,7 @@ Ajouter.onclick=()=>{
     produits.push(produitcree);
 
     simplificationdelisteAvecig();
-    alert("inside 1")
+    alert("inside 0")
 
 
 }
