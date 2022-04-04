@@ -6,13 +6,13 @@ class carteProduit {
         this.description=description;
         this.rating=rating;
         this.numvedeur=numvedeur;
-        
+
     }
 }
 
 // creer un produit a partir de la class
 const produit1 = new carteProduit('voicile titre ',50 ,'https://i.imgur.com/fqSUuRe.jpg','voici la description du premier produit que l',3,776394551)
-//elements de la page 
+//elements de la page
 const titresoumis = document.getElementById('titresoumis');
 const descriptionsoumise =document.getElementById('descriptionsoumise');
 const prixsoumis =document.getElementById('prixsoumis');
@@ -20,12 +20,12 @@ const liensoumis =document.getElementById('liensoumis');
 const ratingsoumis =document.getElementById('ratingsoumis');
 const Ajouter = document.getElementById('btnajouter');
 const Contacter = document.getElementById('bt')
-//liste de produits 
+//liste de produits
 var produits = [{titre:'Titre article ',prix:150 ,image:'https://www.instagram.com/p/Cb3S9yBM9v2/',description:'voici la description du premier produit que vous allez mettre   xxoooxxxoooxxxooooxoxoxoxoxoxoxo------aaaaaaaaaaaaaaaa-----------------bbbbbbbbbbbbbbbbb______cdr_____2222222222222222222222222222222------333333333666666-----------888888  ____________________________________ttttttttttttttttttttttttttttttttttttttttttttt----yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy---iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii-ijdfivnuvnrevu vneurvneru nevuenvu',rating:4,numvedeur:776394551}]
-//fonction beaucoup plus simplidiée de la precedente 
+//fonction beaucoup plus simplidiée de la precedente
 
 function simplificationdeliste(){
-    
+
     let etoilelist = document.createElement('ul');
     etoilelist.classList.add('list-inline','small');
     for (let i=0; i<produits.at(-1).rating;i++){
@@ -36,7 +36,7 @@ function simplificationdeliste(){
                   icone.classList.add('fa','fa-star','text-success')
                   etoile.appendChild(icone)
               }
-     
+
 
      for (let i=produits.at(-1).rating; i<5;i++){
         let etoile = document.createElement('li');
@@ -65,17 +65,17 @@ function simplificationdeliste(){
      <h6 class="font-weight-bold my-2">${produits.at(-1).prix} $</h6>
      <ul class="list-inline small">`+etoilelist.innerHTML+`</ul></div><div >`+buttonwhatsapp+`</div></div><img src="${produits.at(-1).image}" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2"></div> `
      listeproduits.appendChild(produitelement);
-     
-     
 
-     
+
+
+
 
      document.getElementById(`buttonw${produits.indexOf(produits.at(-1))}`).addEventListener("click",(event)=>{
-        
+
         let ind = Number(event.target.id.replace('buttonw',''));
         console.log(ind)
         console.log(produits[ind].numvedeur)
-       
+
      })
 }
 // déclencheurs et fonction
@@ -83,8 +83,8 @@ Ajouter.onclick=()=>{
     const produitcree = new carteProduit(titresoumis.value,prixsoumis.value,liensoumis.value,descriptionsoumise.value,ratingsoumis.value,Math.floor(Math.random()*100000));
     produits.push(produitcree);
     simplificationdelisteAvecig();
-    
-  
+
+
 }
 
 
@@ -94,12 +94,12 @@ Ajouter.onclick=()=>{
 //simplificationdeliste();
 
 
- 
+
 
 //avec button instagram
 
  function simplificationdelisteAvecig(){
-    
+
     let etoilelist = document.createElement('ul');
     etoilelist.classList.add('list-inline','small');
     for (let i=0; i<produits.at(-1).rating;i++){
@@ -110,7 +110,7 @@ Ajouter.onclick=()=>{
                   icone.classList.add('fa','fa-star','text-success')
                   etoile.appendChild(icone)
               }
-     
+
 
      for (let i=produits.at(-1).rating; i<5;i++){
         let etoile = document.createElement('li');
@@ -126,7 +126,7 @@ Ajouter.onclick=()=>{
     //button whatsapp
      let buttonwhatsapp = `<div><button class="buttonwhatsapp" id="buttonw${produits.indexOf(produits.at(-1))}"><i class="bi bi-whatsapp"></i>   Contacter </button></div>`
      //lien Instagram  : Utiliser le lien fourni a la source
-     
+
      let blocinstagram = `<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${produits.at(-1).image}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0" scrolling="no"</iframe></div>`
 
 
@@ -142,18 +142,21 @@ Ajouter.onclick=()=>{
      <ul class="list-inline small">`+etoilelist.innerHTML+`</ul></div><div >`+buttonwhatsapp+`</div></div>`+blocinstagram+`</div> `
      listeproduits.appendChild(produitelement);
      console.log(liensoumis.value)
-     
-     
 
-     
+
+
+
 
      document.getElementById(`buttonw${produits.indexOf(produits.at(-1))}`).addEventListener("click",(event)=>{
-        
+
         let ind = Number(event.target.id.replace('buttonw',''));
         console.log(ind)
         console.log(produits[ind].numvedeur)
-       
+
      })
 }
 
+
+alert("avant code")
 simplificationdelisteAvecig();
+alert("apres code")
