@@ -168,4 +168,4 @@ Ajouter.onclick=()=>{
 
 
 
-window.onload = simplificationdelisteAvecig();
+setTimeout (simplificationdelisteAvecig(),10000;
