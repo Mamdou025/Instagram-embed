@@ -81,3 +81,11 @@ function CreationElementsSurpage(){
     
      }
     
+
+
+
+
+
+
+const stringig = 'https://www.instagram.com/p/Cb81lwCsJ4C/'
+const stringigcdn='https://scontent-atl3-1.cdninstagram.com/v/t51.2885-15/277840206_1188860831857817_4800269513640600467_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08&_nc_ht=scontent-atl3-1.cdninstagram.com&_nc_cat=105&_nc_ohc=ZZzTkC9uZ5gAX92chwA&edm=ALY_pVYBAAAA&ccb=7-4&oh=00_AT-gUeu8ZysH6ycRJYdsABwIhkQUkeLp3Z9VlpCyBOyPHA&oe=62530D66&_nc_sid=1ffb93'
