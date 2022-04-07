@@ -16,7 +16,7 @@
 <body>
 <!--Visuel des liens -->
 <h1>BLOC visuel</h1>
-<div class="blocvisuel">
+<div class="blocvisuel" id="allbloc">
 <div class="container-xl">
 	<div class="row">
 		<div class="col-md-12 mx-auto"id="coloneprinc">
@@ -26,23 +26,24 @@
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
 				<li data-target="#myCarousel" data-slide-to="1"></li>
 				<li data-target="#myCarousel" data-slide-to="2"></li>
+				<li data-target="#myCarousel" data-slide-to="3"></li>
 			</ol>   
 			<!-- Wrapper for carousel items -->
 			<div class="carousel-inner">
 				<div class="carousel-item active">
 					<div class="row">
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper0">
 														
 							</div>
 						</div>
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper1">
 														
 							</div>
 						</div>	
 						<!--THUMB WRAPPER-->			
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper" id="thumb-wrapper2">
 								
 													
@@ -53,18 +54,18 @@
 				</div>
 				<div class="carousel-item">
 					<div class="row">
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper3">
 														
 							</div>
 						</div>
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper4">
 								
 														
 							</div>
 						</div>
-						<div class="col-xl-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper5">
 														
 							</div>					
@@ -73,18 +74,37 @@
 				</div>
 				<div class="carousel-item">
 					<div class="row">
-						<div class="col-sm-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper6">
 								
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper7">
 														
 							</div>
 						</div>
-						<div class="col-sm-4">
+						<div class="col-lg-4">
 							<div class="thumb-wrapper"id="thumb-wrapper8">
+													
+							</div>					
+						</div>
+					</div>
+				</div>
+				<div class="carousel-item">
+					<div class="row">
+						<div class="col-lg-4">
+							<div class="thumb-wrapper"id="thumb-wrapper9">
+								
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="thumb-wrapper"id="thumb-wrapper10">
+														
+							</div>
+						</div>
+						<div class="col-lg-4">
+							<div class="thumb-wrapper"id="thumb-wrapper11">
 													
 							</div>					
 						</div>
@@ -112,118 +132,136 @@
 
 
 <!---->
-<!--Faire entrer le lien  -->
-<div class="blocliens">
-<div class="signup-form">
-    <form onsubmit="return false">
-		<h2>Instagram embed </h2>
-		<p>mettez votre lien instagram</p>
-		<hr>
-		<!--Titre-->
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-type"></i>
-					</span>                    
-				</div>
-				<input type="text" class="form-control" name="Titre" placeholder="Titre" id="titresoumis">
-			</div>
-        </div>
-		<!--Lien instagram-->
-        <div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-instagram"></i>
-					</span>                    
-				</div>
-				<input type="text" class="form-control" name="lieninstagram" placeholder="lien instagram" required="required" id="liensoumis"  >
-			</div>
-        </div>
-		
-		<!--Description -->
-        <div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-body-text"></i>
-					</span>                    
-				</div>
-				<textarea class="form-control" placeholder="Description" id="descriptionsoumise"></textarea>
-			</div>
-        </div>	
-		<!--Type-->
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-aspect-ratio"></i>
-					</span>                    
+
+	<div class="row">
+	
+	<div class="col-md-6">	<!--Instagram embed bloc-->
+		<div class="signup-form ">
+			<form onsubmit="return false"  >
+				<h2>Instagram embed </h2>
+				<p>mettez votre lien instagram</p>
+				<hr>
+				
+				<!--Lien instagram-->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="bi bi-instagram"></i>
+							</span>                    
+						</div>
+						<input type="text" class="form-control" name="lieninstagram" placeholder="lien instagram" required="required" id="liensoumis"  >
+					</div>
 				</div>
 				
-				<select class="form-control" id="ratingsoumis">
-					<option>1</option>
-					<option>2</option>
-					<option>3</option>
-					<option>4</option>
-					<option>5</option>
-				  </select>
-			</div>
-        </div>
-
-
-
-		<!--RANGE1 -->
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-rulers"></i>
-					</span>                    
+					
+				<!--Type-->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="bi bi-aspect-ratio"></i>
+							</span>                    
+						</div>
+						
+						<select class="form-control" id="typesoumis">
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+							<option>5</option>
+						  </select>
+					</div>
 				</div>
-				 <p class="dimensionsth">HEIGHT</p>
-			</div>
-			<input type="range" class="form-control-range" id="dimension" min="300" max="1000" value="700" >
-        </div>
-		<!--RANGE2-->
-		<div class="form-group">
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">
-						<i class="bi bi-rulers"></i>
-					</span>                    
+		
+		
+		
+				<!--RANGE1 -->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="bi bi-rulers"></i>
+							</span>                    
+						</div>
+						 <p class="dimensionsth">HEIGHT</p>
+					</div>
+					<input type="range" class="form-control-range" id="dimension" min="300" max="1000" value="475" >
 				</div>
-				<p class="dimensionstw">width</p>
+				<!--RANGE2-->
+				<div class="form-group">
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">
+								<i class="bi bi-rulers"></i>
+							</span>                    
+						</div>
+						<p class="dimensionstw">width</p>
+					</div>
+					<input type="range" class="form-control-range" id="dimensionw" min="20" max="99" value="99">
+				</div>
+				
+				<!---->
+				
+				
+				
+		
+		<!--Fin de bloc des codes -->
+		<div class="form-group">
+				<button class="btn btn-primary btn-lg" id="btnajouter">Ajouter Element </button>
 			</div>
-			<input type="range" class="form-control-range" id="dimensionw" min="20" max="99" value="99">
-        </div>
+			</form>
+			
+			
+		</div></div>
+	<div class="col-md-6"><div class="signup-form ">
+		<form onsubmit="return false" >
+			<h2>Code snippet </h2>
+			<p>Voici vos blocs de code</p>	
+			<!--Bloc des codes -->
+	<div class="form-group">
+		<div class="input-group">
 		
-		<!---->
-        
 		
-		
-		<!--Bloc des codes -->
-<div class="form-group">
-	<div class="input-group">
-    
-	
-    <textarea class="form-control" id="codesnipet" rows="3"></textarea>
-	<div class="input-group-prepend">
-		<span class="input-group-text">
-			<button readonly="readonly" type="button" id="copier"data-toggle="popover" title="Popover title" data-content="hhhh"><i class="bi bi-clipboard"></i></button>
-		</span>                    
+		<textarea class="form-control" id="codesnipet" rows="3"></textarea>
+		<div class="input-group-prepend">
+			<span class="input-group-text">
+				<button readonly="readonly" type="button" id="copier"data-toggle="popover" title="Popover title" data-content="hhhh"><i class="bi bi-clipboard"></i></button>
+			</span>                    
+		</div>
 	</div>
-</div>
-  </div>
-<!--Fin de bloc des codes -->
-<div class="form-group">
-		<button class="btn btn-primary btn-lg" id="btnajouter">Ajouter Element </button>
+	  </div>
+	<!--Fin de bloc des codes -->
+	<!--Bloc des codes -->
+	<p>Voici vos blocs de code pour tout </p>	
+	<div class="form-group">
+		<div class="input-group">
+		
+		
+		<textarea class="form-control" id="codesnipet2" rows="3"></textarea>
+		<div class="input-group-prepend">
+			<span class="input-group-text">
+				<button readonly="readonly" type="button" id="copiertout"data-toggle="popover" title="Popover title" data-content="hhhh"><i class="bi bi-clipboard"></i></button>
+			</span>                    
+		</div>
 	</div>
-    </form>
+	  </div>
+	<!--Fin de bloc des codes -->
 	
-	
+		</form>
+		
+		
+	</div></div>
 </div>
+
+<!--Faire entrer le lien  -->
+<div class="blocliens">
+
+
+
+	<!--Instagram embed bloc-->
+
+
 </div>
 <!--Fin de faire entrer le lien  -->
 </body>

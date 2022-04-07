@@ -1,9 +1,6 @@
 class carteInstagram {
-    constructor(titre,lien,description,rating,numvedeur){
-        this.titre = titre;
-        this.description=description;
-        this.rating=rating;
-        this.numvedeur=numvedeur;
+    constructor(lien,type){
+        this.type=type;
         this.lien=lien;
         this.affichage =`<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${this.lien}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`;
       
@@ -15,7 +12,7 @@ class carteInstagram {
 
 var produits = []
 // creer un produit a partir de la class
-const produit1 = new carteInstagram('voicile titre ','https://www.instagram.com/p/Cb7y8OnNwYv/','voici la description du premier produit que l',3,776394551)
+const produit1 = new carteInstagram('https://www.instagram.com/p/Cb7y8OnNwYv/',3)
 produits.push(produit1);
 //elements de la page 
 
@@ -23,7 +20,7 @@ const titresoumis = document.getElementById('titresoumis');
 const descriptionsoumise =document.getElementById('descriptionsoumise');
 const prixsoumis =document.getElementById('prixsoumis');
 const liensoumis =document.getElementById('liensoumis');
-const ratingsoumis =document.getElementById('ratingsoumis');
+const typesoumis =document.getElementById('typesoumis');
 const Ajouter = document.getElementById('btnajouter');
 const Contacter = document.getElementById('bt')
 const codesnipet =  document.getElementById('codesnipet')
@@ -34,11 +31,12 @@ const dimension = document.getElementById('dimension')
 const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
 const width =document.querySelector('.dimensionstw')
+const allbloc = document.getElementById('allbloc')
 
 
 
 thumbwrappercss = document.getElementsByClassName('thumb-wrapper');
-console.log(thumbwrappercss);
+
 width.innerHTML = `Epaisseur = ${dimensionw.value}%`;
 height.innerHTML=`Hauteur = ${dimension.value}pixels`;
 
@@ -50,7 +48,7 @@ height.innerHTML=`Hauteur = ${dimension.value}pixels`;
 
 
 //changer hauteur
-function updatedimensions(){
+let vraisnipet = function updatedimensions(){
     width.innerHTML = `Epaisseur ${dimensionw.value}%`;
     height.innerHTML=`Hauteur ${dimension.value} pixels`;
 
@@ -62,7 +60,7 @@ function updatedimensions(){
       
     }
 
-    let vraisnipet = `<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
+    let code1 = `<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
     box-shadow:3px 6px rgb(116, 112, 112);
     border-radius: 10px;
     margin: 0 auto;
@@ -71,14 +69,14 @@ function updatedimensions(){
     position:relative;" id="instagram-embed-0" src="${produits.at(-1).lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
     
     
-   console.log(produits.at(-1).lien);
-    console.log(vraisnipet);
-    codesnipet.innerHTML = vraisnipet;
+   
+    codesnipet.textContent = code1;
+    return code1;
+ 
 }
 
 
- dimension.oninput= updatedimensions;
- dimensionw.oninput= updatedimensions;
+ 
 
 //copier le texte
 copier.onclick=()=> {
@@ -98,37 +96,58 @@ copier.onclick=()=> {
 
 function simplificationdelisteAvecig(){
 
+    if (produits.length>9){
+        console.log('dixieme')
+        console.log(produits.at(-1))
+    }
+
+    console.log("passe fonction")
+
     produits.forEach(element => {
+
+        
         
         const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
         cage.innerHTML= produits[produits.indexOf(element)].affichage;
+       
         
     });
     
-
-   
-    thumbwrapper0.innerHTML= produit1.affichage;
-    
-   
 
 
 }
 
 
 // déclencheurs et fonction
+
+dimension.oninput= vraisnipet;
+ dimensionw.oninput= vraisnipet;
 Ajouter.onclick=()=>{
+  
+
+  if( String(liensoumis.value).includes('copy')){
+ 
+    url=(String(liensoumis.value)).substring(0,40)
     
-    const carteInstagramcree = new carteInstagram(titresoumis.value,liensoumis.value,descriptionsoumise.value,ratingsoumis.value,Math.floor(Math.random()*100000));
+  }else{
+    url=liensoumis.value
+   
+  }
+    
+    const carteInstagramcree = new carteInstagram(url,typesoumis.value);
     produits.push(carteInstagramcree);
     simplificationdelisteAvecig();
-   console.log( thumbwrappercss);
+    vraisnipet();
+   
 }
 
 
 
 
 
-
+function creerThumbwrapper(){
+  
+}
 
 
 
