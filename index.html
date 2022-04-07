@@ -22,14 +22,13 @@
 		<div class="col-md-12 mx-auto"id="coloneprinc">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
 			<!-- Carousel indicators -->
-			<ol class="carousel-indicators">
+			<ol class="carousel-indicators"id="carousel-indicators">
 				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-				<li data-target="#myCarousel" data-slide-to="1"></li>
-				<li data-target="#myCarousel" data-slide-to="2"></li>
-				<li data-target="#myCarousel" data-slide-to="3"></li>
+				
+			
 			</ol>   
 			<!-- Wrapper for carousel items -->
-			<div class="carousel-inner">
+			<div class="carousel-inner"  id="carousel-inner">
 				<div class="carousel-item active">
 					<div class="row">
 						<div class="col-lg-4">
@@ -52,64 +51,7 @@
 						<!-- FIN THUMB WRAPPER-->
 					</div>
 				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper3">
-														
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper4">
-								
-														
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper5">
-														
-							</div>					
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper6">
-								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper7">
-														
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper8">
-													
-							</div>					
-						</div>
-					</div>
-				</div>
-				<div class="carousel-item">
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper9">
-								
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper10">
-														
-							</div>
-						</div>
-						<div class="col-lg-4">
-							<div class="thumb-wrapper"id="thumb-wrapper11">
-													
-							</div>					
-						</div>
-					</div>
-				</div>
+				
 			</div>
 			<!-- Carousel controls -->
 			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
@@ -124,11 +66,6 @@
 </div>
 </div>
 <!--Fin de visuel des liens  -->
-
-
-
-
-
 
 
 <!---->
@@ -156,24 +93,7 @@
 				
 					
 				<!--Type-->
-				<div class="form-group">
-					<div class="input-group">
-						<div class="input-group-prepend">
-							<span class="input-group-text">
-								<i class="bi bi-aspect-ratio"></i>
-							</span>                    
-						</div>
-						
-						<select class="form-control" id="typesoumis">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
-							<option>5</option>
-						  </select>
-					</div>
-				</div>
-		
+				
 		
 		
 				<!--RANGE1 -->
@@ -217,13 +137,34 @@
 	<div class="col-md-6"><div class="signup-form ">
 		<form onsubmit="return false" >
 			<h2>Code snippet </h2>
-			<p>Voici vos blocs de code</p>	
+			<p> type d'affichage </p>
+			
+			
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<i class="bi bi-aspect-ratio"></i>
+						</span>                    
+					</div>
+					
+					<select class="form-control" id="typesoumis" placeholder="Type d'affichage">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					  </select>
+				</div>
+			</div>
+	
 			<!--Bloc des codes -->
+			<p> code pour une seule carte </p>	
 	<div class="form-group">
 		<div class="input-group">
 		
 		
-		<textarea class="form-control" id="codesnipet" rows="3"></textarea>
+		<textarea class="form-control" id="codesnipet" rows="2"></textarea>
 		<div class="input-group-prepend">
 			<span class="input-group-text">
 				<button readonly="readonly" type="button" id="copier"data-toggle="popover" title="Popover title" data-content="hhhh"><i class="bi bi-clipboard"></i></button>
@@ -233,12 +174,12 @@
 	  </div>
 	<!--Fin de bloc des codes -->
 	<!--Bloc des codes -->
-	<p>Voici vos blocs de code pour tout </p>	
+	<p> code pour tout </p>	
 	<div class="form-group">
 		<div class="input-group">
 		
 		
-		<textarea class="form-control" id="codesnipet2" rows="3"></textarea>
+		<textarea class="form-control" id="codesnipet2" rows="2"></textarea>
 		<div class="input-group-prepend">
 			<span class="input-group-text">
 				<button readonly="readonly" type="button" id="copiertout"data-toggle="popover" title="Popover title" data-content="hhhh"><i class="bi bi-clipboard"></i></button>
@@ -255,14 +196,7 @@
 </div>
 
 <!--Faire entrer le lien  -->
-<div class="blocliens">
 
-
-
-	<!--Instagram embed bloc-->
-
-
-</div>
 <!--Fin de faire entrer le lien  -->
 </body>
 <script src="list.js"></script>

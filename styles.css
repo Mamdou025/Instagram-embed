@@ -148,10 +148,10 @@
 	border: none;
 }
 .carousel-indicators li {	
-	background: #ababab;
+	background: #e96ab8;
 }
 .carousel-indicators li.active {	
-	background: #555;
+	background: rgb(73, 82, 201);
 }
    
 
@@ -250,12 +250,13 @@ body {
 .signup-form .btn, .signup-form .btn:active {        
 	font-size: 16px;
 	font-weight: bold;
-	background: #19aa8d ;
+	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
 	border: none;
 	min-width: 140px;
+	border-radius: 2rem;
 }
 .signup-form .btn:hover, .signup-form .btn:focus {
-	background: #179b81 !important;
+	background:linear-gradient(90deg, #833ab4, #5851db,#405de6);
 }
 .signup-form a {
 	color: rgb(255, 255, 255);	

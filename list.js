@@ -1,6 +1,5 @@
 class carteInstagram {
-    constructor(lien,type){
-        this.type=type;
+    constructor(lien){
         this.lien=lien;
         this.affichage =`<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${this.lien}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`;
       
@@ -12,8 +11,9 @@ class carteInstagram {
 
 var produits = []
 // creer un produit a partir de la class
-const produit1 = new carteInstagram('https://www.instagram.com/p/Cb7y8OnNwYv/',3)
+const produit1 = new carteInstagram('https://www.instagram.com/p/Cb7y8OnNwYv/')
 produits.push(produit1);
+console.log(produits)
 //elements de la page 
 
 const titresoumis = document.getElementById('titresoumis');
@@ -32,7 +32,9 @@ const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
 const width =document.querySelector('.dimensionstw')
 const allbloc = document.getElementById('allbloc')
-
+//carousell 
+const carouselindic = document.getElementById('carousel-indicators')
+const carousel= document.getElementById('carousel-inner')
 
 
 thumbwrappercss = document.getElementsByClassName('thumb-wrapper');
@@ -101,7 +103,7 @@ function simplificationdelisteAvecig(){
         console.log(produits.at(-1))
     }
 
-    console.log("passe fonction")
+  
 
     produits.forEach(element => {
 
@@ -122,6 +124,7 @@ function simplificationdelisteAvecig(){
 
 dimension.oninput= vraisnipet;
  dimensionw.oninput= vraisnipet;
+
 Ajouter.onclick=()=>{
   
 
@@ -134,11 +137,14 @@ Ajouter.onclick=()=>{
    
   }
     
-    const carteInstagramcree = new carteInstagram(url,typesoumis.value);
+    const carteInstagramcree = new carteInstagram(url);
     produits.push(carteInstagramcree);
+    creerThumbwrapper();
     simplificationdelisteAvecig();
     vraisnipet();
    
+    
+
 }
 
 
@@ -146,11 +152,53 @@ Ajouter.onclick=()=>{
 
 
 function creerThumbwrapper(){
+
+
   
+
+  if(produits.length%3  === 1){
+    console.log(produits.length)
+  console.log('oui ca passse')
+  //cree un autre bouton carrousel
+  let listitem=document.createElement('li') 
+       listitem.setAttribute("data-target","#mycarousel");
+       listitem.setAttribute("data-slide-to",`${((produits.length-1)/3)}`)
+
+  
+  carouselindic.appendChild(listitem)
+
+  div1 = document.createElement('div')
+    div1.classList.add('carousel-item')
+       div2 = document.createElement('div')
+       div2.classList.add('row')
+
+
+  }
+  
+//creer un nouveau Thumbwrapper
+
+ if(produits.length>3){
+    
+         div3 = document.createElement('div')
+         div3.classList.add('col-lg-4')
+           div4 = document.createElement('div')
+           div4.classList.add('thumb-wrapper')
+           div4.id=`thumb-wrapper${produits.length-1}`
+
+          
+          
+  carousel.appendChild(div1)
+         div1.appendChild(div2)
+            div2.appendChild(div3)
+               div3.appendChild(div4)
+ }
+
+  
+
 }
 
 
-
+//creerThumbwrapper();
  
 simplificationdelisteAvecig();
 
