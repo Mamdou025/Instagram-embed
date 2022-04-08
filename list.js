@@ -72,8 +72,8 @@ let vraisnipet = function updatedimensions(){
     position:relative;" id="instagram-embed-0" src="${produits.at(-1).lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
     
     
-   
-    codesnipet.textContent = code1;
+   codesnipet.value=code1;
+    //codesnipet.textContent = code1;
     return code1;
  
 }
@@ -83,9 +83,9 @@ let vraisnipet = function updatedimensions(){
 
 //copier le texte
 copier.onclick=()=> {
-   
-
-
+  const clip1=document.getElementById('clip1')
+  clip1.className="bi bi-clipboard-check"
+  
     /* Select the text field */
     codesnipet.select();
     codesnipet.setSelectionRange(0, 99999); /* For mobile devices */
