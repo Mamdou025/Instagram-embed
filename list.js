@@ -11,7 +11,7 @@ class carteInstagram {
 
 var produits = []
 // creer un produit a partir de la class
-const produit1 = new carteInstagram('https://www.instagram.com/p/Cb7y8OnNwYv/')
+const produit1 = new carteInstagram('https://www.instagram.com/p/CcDfi10Lka4/')
 produits.push(produit1);
 console.log(produits)
 //elements de la page 
@@ -41,6 +41,7 @@ thumbwrappercss = document.getElementsByClassName('thumb-wrapper');
 
 width.innerHTML = `Epaisseur = ${dimensionw.value}%`;
 height.innerHTML=`Hauteur = ${dimension.value}pixels`;
+let currentrow = 1;
 
 //code snipet 
 
@@ -94,36 +95,100 @@ copier.onclick=()=> {
 }
 
 
-//Simplification de liste
 
-function simplificationdelisteAvecig(){
-
-    if (produits.length>9){
-        console.log('dixieme')
-        console.log(produits.at(-1))
-    }
-
-  
-
-    produits.forEach(element => {
-
-        
-        
-        const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
-        cage.innerHTML= produits[produits.indexOf(element)].affichage;
-       
-        
-    });
-    
-
-
-}
 
 
 // déclencheurs et fonction
 
 dimension.oninput= vraisnipet;
  dimensionw.oninput= vraisnipet;
+
+
+
+
+
+function creerThumbwrapper(){
+
+
+  if(produits.length%3  === 1 && produits.length>2 ){
+    currentrow ++;
+    
+    console.log('Actuelle colone est '+ currentrow)
+  
+  //cree un autre bouton carrousel
+  let listitem=document.createElement('li') 
+       listitem.setAttribute("data-target","#mycarousel");
+       listitem.setAttribute("data-slide-to",`${((produits.length-1)/3)}`)
+
+  
+  carouselindic.appendChild(listitem)
+
+
+
+  //Creer des row 
+
+  div1 = document.createElement('div')
+    div1.classList.add('carousel-item')
+    //if(produits.length%3===1)
+       div2 = document.createElement('div')
+       div2.classList.add('row')
+
+       
+       div2.id=`row${currentrow}`
+
+
+
+       //test 
+       carousel.appendChild(div1)
+       div1.appendChild(div2)
+          
+
+          console.log('dans if ')
+
+  }
+  
+//creer un nouveau Thumbwrapper
+
+ console.log('l element passe a travers le if  ')
+    
+         div3 = document.createElement('div')
+         div3.classList.add('col-lg-4')
+           div4 = document.createElement('div')
+           div4.classList.add('thumb-wrapper')
+           div4.id=`thumb-wrapper${(produits.length)-1}`
+
+
+               div3.appendChild(div4)
+
+
+              row=document.getElementById(`row${currentrow}`)
+               console.log('le nombre de cartes est  '+produits.length)
+
+               row.appendChild(div3)
+               console.log(`creation thumbwraper id = ${produits.length-1} dans la colone ${currentrow}`)
+               console.log(produits)
+               
+}
+
+//Simplification de liste
+
+function simplificationdelisteAvecig(){
+
+  produits.forEach(element => {
+
+      
+      
+      const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
+      console.log(cage);
+      cage.innerHTML= produits[produits.indexOf(element)].affichage;
+     
+      
+  });
+
+}
+
+
+
 
 Ajouter.onclick=()=>{
   
@@ -139,6 +204,7 @@ Ajouter.onclick=()=>{
     
     const carteInstagramcree = new carteInstagram(url);
     produits.push(carteInstagramcree);
+    
     creerThumbwrapper();
     simplificationdelisteAvecig();
     vraisnipet();
@@ -151,56 +217,6 @@ Ajouter.onclick=()=>{
 
 
 
-function creerThumbwrapper(){
-
-
-  
-
-  if(produits.length%3  === 1){
-    console.log(produits.length)
-  console.log('oui ca passse')
-  //cree un autre bouton carrousel
-  let listitem=document.createElement('li') 
-       listitem.setAttribute("data-target","#mycarousel");
-       listitem.setAttribute("data-slide-to",`${((produits.length-1)/3)}`)
-
-  
-  carouselindic.appendChild(listitem)
-
-  div1 = document.createElement('div')
-    div1.classList.add('carousel-item')
-       div2 = document.createElement('div')
-       div2.classList.add('row')
-
-
-  }
-  
-//creer un nouveau Thumbwrapper
-
- if(produits.length>3){
-    
-         div3 = document.createElement('div')
-         div3.classList.add('col-lg-4')
-           div4 = document.createElement('div')
-           div4.classList.add('thumb-wrapper')
-           div4.id=`thumb-wrapper${produits.length-1}`
-
-          
-          
-  carousel.appendChild(div1)
-         div1.appendChild(div2)
-            div2.appendChild(div3)
-               div3.appendChild(div4)
- }
-
-  
-
-}
-
-
-//creerThumbwrapper();
- 
-simplificationdelisteAvecig();
 
 
 
