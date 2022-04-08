@@ -11,8 +11,8 @@ class carteInstagram {
 
 var produits = []
 // creer un produit a partir de la class
-const produit1 = new carteInstagram('https://www.instagram.com/p/CcDfi10Lka4/')
-produits.push(produit1);
+//const produit1 = new carteInstagram('https://www.instagram.com/p/CcDfi10Lka4/')
+//produits.push(produit1);
 console.log(produits)
 //elements de la page 
 
@@ -110,7 +110,7 @@ dimension.oninput= vraisnipet;
 function creerThumbwrapper(){
 
 
-  if(produits.length%3  === 1 && produits.length>2 ){
+  if(produits.length%3  === 1 && produits.length>1 ){
     currentrow ++;
     
     console.log('Actuelle colone est '+ currentrow)
@@ -143,13 +143,13 @@ function creerThumbwrapper(){
        div1.appendChild(div2)
           
 
-          console.log('dans if ')
+         
 
   }
   
 //creer un nouveau Thumbwrapper
 
- console.log('l element passe a travers le if  ')
+
     
          div3 = document.createElement('div')
          div3.classList.add('col-lg-4')
@@ -174,16 +174,7 @@ function creerThumbwrapper(){
 
 function simplificationdelisteAvecig(){
 
-  produits.forEach(element => {
-
-      
-      
-      const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
-      console.log(cage);
-      cage.innerHTML= produits[produits.indexOf(element)].affichage;
-     
-      
-  });
+  
 
 }
 
@@ -206,13 +197,23 @@ Ajouter.onclick=()=>{
     produits.push(carteInstagramcree);
     
     creerThumbwrapper();
-    simplificationdelisteAvecig();
+    
+    produits.forEach(element => {
+
+      
+      
+      const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
+      console.log(cage);
+      cage.innerHTML= produits[produits.indexOf(element)].affichage;
+     
+      
+  });
+  
     vraisnipet();
    
     
 
 }
-
 
 
 

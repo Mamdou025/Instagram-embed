@@ -303,3 +303,10 @@ body {
     width:95%;
     position:relative;
   }
+
+
+  /* croorectionmarge */
+  .row{
+	margin-right: 0;
+    margin-left: 0;
+  }
