@@ -13,7 +13,7 @@ var produits = []
 // creer un produit a partir de la class
 //const produit1 = new carteInstagram('https://www.instagram.com/p/CcDfi10Lka4/')
 //produits.push(produit1);
-console.log(produits)
+//console.log(produits)
 //elements de la page 
 
 const titresoumis = document.getElementById('titresoumis');
@@ -162,28 +162,54 @@ function creerThumbwrapper(){
 
 
               row=document.getElementById(`row${currentrow}`)
-               console.log('le nombre de cartes est  '+produits.length)
+               
 
                row.appendChild(div3)
-               console.log(`creation thumbwraper id = ${produits.length-1} dans la colone ${currentrow}`)
-               console.log(produits)
+               
+               
                
 }
 
-//Simplification de liste
 
-function simplificationdelisteAvecig(){
 
+
+
+
+
+
+//Manipulation de Iframe 
+ function manipulationdeiframe(){
+  const myiframe= document.getElementsByClassName('instagram-media')
+  const element1 = myiframe[0];
+  console.log(element1)
+  const contentwindowofelement1=element1.contentWindow 
+  const contentDocumentofelement1= element1.contentDocument
+  console.log(contentwindowofelement1)
+  console.log(contentDocumentofelement1)
+  console.log(contentwindowofelement1.document)
+  console.log(contentDocumentofelement1.document)
   
-
+  
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
 Ajouter.onclick=()=>{
   
-
+//verifie le lien 
   if( String(liensoumis.value).includes('copy')){
  
     url=(String(liensoumis.value)).substring(0,40)
@@ -192,24 +218,28 @@ Ajouter.onclick=()=>{
     url=liensoumis.value
    
   }
-    
+    //cree une nouvelle carte 
     const carteInstagramcree = new carteInstagram(url);
     produits.push(carteInstagramcree);
-    
+    //cree les elements de la liste
     creerThumbwrapper();
-    
+    //afficher les elements de la liste sur la page 
     produits.forEach(element => {
 
       
       
       const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
-      console.log(cage);
+     
       cage.innerHTML= produits[produits.indexOf(element)].affichage;
      
       
   });
-  
+  // copier le code sur les zones de snippet 
     vraisnipet();
+    //capturer un element du iframe 
+    manipulationdeiframe();
+   
+
    
     
 
