@@ -55,6 +55,14 @@
 
 
    /*    visuel */
+
+
+.text-center{
+	font-size: larger;
+	padding: 10px;
+	margin: 10px;
+}
+
 #firstrow{
 	margin-top: 105px;
 }
@@ -70,7 +78,7 @@ header{
 	width: 100%;
 	display: flex;
 	background-color: rgb(255, 255, 255);
-	box-shadow: 0px 2px 6px #aaaaaa ;
+	box-shadow: 0px 0px 2px #aaaaaa8a ;
 	position: fixed;
 	top:0px;
 	z-index: 2;
@@ -357,4 +365,17 @@ body {
   .row{
 	margin-right: 0;
     margin-left: 0;
+  }
+
+
+
+
+
+
+  .navbar.fixed-top{
+	  background-color: transparent;
+  }
+
+  .navbar.fixed-top.top-nav-collapse{
+	  background-color: white;
   }
