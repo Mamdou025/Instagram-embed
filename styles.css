@@ -1,3 +1,14 @@
+
+
+@font-face{
+	font-family: "billabong";
+	src:url(/Billabong-Font/Billabong.ttf);
+}
+
+
+
+
+
 .blocliens{
 	width: fit-content;
     margin: 0 auto;
@@ -44,7 +55,9 @@
 
 
    /*    visuel */
-
+#firstrow{
+	margin-top: 105px;
+}
 
    .thumb-wrapper{
        width:99% ;
@@ -52,8 +65,43 @@
    }
 
 
+/*LOGO*/
+header{
+	width: 100%;
+	display: flex;
+	background-color: rgb(255, 255, 255);
+	box-shadow: 0px 2px 6px #aaaaaa ;
+	position: fixed;
+	top:0px;
+	z-index: 2;
+	
+}
 
+.logo{
+	width: 23%;
+	min-width: 340px;
+	
+	margin: 0 auto;
+	padding: 5px;
+	
+}
+ .entete{
+	 font-family: "billabong";
+	 
+	 text-align: center;
+	 padding-top: 6px;
+	 padding: 5px;
+	margin-top: 15px;
+ }
 
+ .container-xl .entete{
+	font-family: "billabong";
+	 color: #333;
+	text-align: center;
+	padding-top: 6px;
+	padding: 5px;
+   margin-top: 15px;
+ }
 
 
 
@@ -211,7 +259,7 @@ body {
 	min-width: 300px;
 	max-width: 600px;
 	margin: 0 auto;
-	padding: 30px 0;
+	padding: 20px 0;
     border-radius: 40px;
 		
 }
