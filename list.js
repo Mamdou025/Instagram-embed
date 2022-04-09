@@ -31,57 +31,74 @@ const dimension = document.getElementById('dimension')
 const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
 const width =document.querySelector('.dimensionstw')
-const allbloc = document.getElementById('allbloc')
+const carouselbloc = document.getElementById('carouselbloc')
 //carousell 
 const carouselindic = document.getElementById('carousel-indicators')
 const carousel= document.getElementById('carousel-inner')
 
+//selectionner tous les elements 
+      //elements carousell
+     thumbwrappercss = document.getElementsByClassName('thumb-wrapper');
+     //elements IG posts
+     igposts = document.getElementsByClassName('igpost')
 
-thumbwrappercss = document.getElementsByClassName('thumb-wrapper');
 
+
+
+ //Elements d'entrée     
 width.innerHTML = `Epaisseur = ${dimensionw.value}%`;
 height.innerHTML=`Hauteur = ${dimension.value}pixels`;
 let currentrow = 1;
 
-//code snipet 
 
 
 
 
+//Fonctions principales 
 
-
+//creer une nouvelle carte
+function creerunproduit(){
+  //verifie le lien 
+  if( String(liensoumis.value).includes('copy')){
+ 
+    url=(String(liensoumis.value)).substring(0,40)
+    
+  }else{
+    url=liensoumis.value
+   
+  }
+    const carteInstagramcree = new carteInstagram(url);
+    //mettre sur la liste 
+    produits.push(carteInstagramcree);
+}
 //changer hauteur
-let vraisnipet = function updatedimensions(){
+function updatedimensions(){
     width.innerHTML = `Epaisseur ${dimensionw.value}%`;
     height.innerHTML=`Hauteur ${dimension.value} pixels`;
 
-
-    
-    for (let i = 0; i < thumbwrappercss.length; i++) {
+    for( i=0;i<produits.length;i++){
+      //taille des thumbwrappers
       thumbwrappercss[i].style.width = `${dimensionw.value}%`;
       thumbwrappercss[i].style.height= `${dimension.value}px`;
-      
+
+      //taille des IG posts 
+      igposts[i].style.height=`${dimension.value}px`;
+
     }
 
-    let code1 = `<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
-    box-shadow:3px 6px rgb(116, 112, 112);
-    border-radius: 10px;
-    margin: 0 auto;
-      " ><iframe class="instagram-media instagram-media-rendered" style="height:95%;
-    width:95%;
-    position:relative;" id="instagram-embed-0" src="${produits.at(-1).lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
-    
-    
-   codesnipet.value=code1;
-    //codesnipet.textContent = code1;
-    return code1;
+   codesnipet.value=`<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
+   box-shadow:3px 6px rgb(116, 112, 112);
+   border-radius: 10px;
+   margin: 0 auto;
+     " ><iframe class="instagram-media instagram-media-rendered" style="height:95%;
+   width:95%;
+   position:relative;" id="instagram-embed-0" src="${produits.at(-1).lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
+   
+
  
 }
 
-
- 
-
-//copier le texte
+//copier le texte du code snipet
 copier.onclick=()=> {
   const clip1=document.getElementById('clip1')
   clip1.className="bi bi-clipboard-check"
@@ -93,20 +110,34 @@ copier.onclick=()=> {
     /* Copy the text inside the text field */
     navigator.clipboard.writeText(codesnipet.value);
 }
+//Creer Post pour igposts
+function creerpost(){
+
+  //creer colone 4
+ colone = document.createElement('div')
+   colone.classList.add('col-4')
+   //creer Igpostt 
+   igpost = document.createElement('div')
+      igpost.classList.add('igpost')
+
+
+      rowigposts= document.getElementById('rowigposts')
+        rowigposts.prepend(colone)
+           colone.appendChild(igpost)
 
 
 
 
-
-// déclencheurs et fonction
-
-dimension.oninput= vraisnipet;
- dimensionw.oninput= vraisnipet;
-
-
+           // inclure le post dans la page 
+           
+      igposts[0].innerHTML = produits.at(-1).affichage;
+    
+     
 
 
+}
 
+//Creer post pour carousel
 function creerThumbwrapper(){
 
 
@@ -166,7 +197,17 @@ function creerThumbwrapper(){
 
                row.appendChild(div3)
                
+               //afficher les elements sur la page 
+               produits.forEach(element => {
+
+      
+      
+                const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
+                
+                cage.innerHTML= produits[produits.indexOf(element)].affichage;
                
+                
+            });
                
 }
 
@@ -177,71 +218,29 @@ function creerThumbwrapper(){
 
 
 
-//Manipulation de Iframe 
- function manipulationdeiframe(){
-  const myiframe= document.getElementsByClassName('instagram-media')
-  const element1 = myiframe[0];
-  console.log(element1)
-  const contentwindowofelement1=element1.contentWindow 
-  const contentDocumentofelement1= element1.contentDocument
-  console.log(contentwindowofelement1)
-  console.log(contentDocumentofelement1)
-  console.log(contentwindowofelement1.document)
-  console.log(contentDocumentofelement1.document)
-  
-  
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Ajouter.onclick=()=>{
-  
-//verifie le lien 
-  if( String(liensoumis.value).includes('copy')){
+//Afficher cacher elements
  
-    url=(String(liensoumis.value)).substring(0,40)
-    
-  }else{
-    url=liensoumis.value
-   
-  }
-    //cree une nouvelle carte 
-    const carteInstagramcree = new carteInstagram(url);
-    produits.push(carteInstagramcree);
-    //cree les elements de la liste
-    creerThumbwrapper();
-    //afficher les elements de la liste sur la page 
-    produits.forEach(element => {
 
-      
-      
-      const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
-     
-      cage.innerHTML= produits[produits.indexOf(element)].affichage;
-     
-      
-  });
-  // copier le code sur les zones de snippet 
-    vraisnipet();
-    //capturer un element du iframe 
-    manipulationdeiframe();
-   
 
-   
-    
+
+
+
+// déclencheurs et fonction
+
+dimensionw.oninput=updatedimensions;
+dimension.oninput=updatedimensions;
+Ajouter.onclick=()=>{
+
+  //creer un produit 
+   creerunproduit();
+  //cree les elements de la liste
+
+  //Creer post pour carousel
+      creerThumbwrapper();
+  //Creer Post pour igposts    
+      creerpost();
+  //changer hauteur    
+      updatedimensions();
 
 }
 

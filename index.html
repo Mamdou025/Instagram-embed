@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 <link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="grid.css">
 <!--Liens pour carrousell -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round">
 
@@ -17,20 +18,19 @@
 	<img class="logo" src="/Images/logoBlack.png" alt="Logo" srcset="">
 </header>
 <body>
-	
 <!--Faire entrer le lien  -->
 <div class="row" id="firstrow">
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<p></p>
 	</div>
-	<div class="col-md-4">
-		<p class="text-center">Avec Instagram embed , choisissez le format de pagination qui vous convient le mieux au contenu que vous souhaitez diffuser. Vous pouvez crér autant de murs, de Grilles, de Carrousels ou de Diaporamas que vous le souhaitez!</p>
+	<div class="col-md-6">
+		<h3 class="text-center" >Avec Instagram embed , choisissez le format de pagination qui vous convient le mieux au contenu que vous souhaitez diffuser. Vous pouvez crér autant de murs, de Grilles, de Carrousels ou de Diaporamas que vous le souhaitez!</h3>
 	</div>
-	<div class="col-md-4">
+	<div class="col-md-3">
 		<p></p>
 	</div>
 </div>
-<div class="row" >
+<div class="row" id="secondrow" >
 
 	<div class="col-md-6">
 		<h2 class="entete">Mettez votre lien instagram</h2>	<!--Instagram embed bloc-->
@@ -67,7 +67,7 @@
 						</div>
 						 <p class="dimensionsth">HEIGHT</p>
 					</div>
-					<input type="range" class="form-control-range" id="dimension" min="300" max="1000" value="475" >
+					<input type="range" class="form-control-range" id="dimension" min="100" max="700" value="475" >
 				</div>
 				<!--RANGE2-->
 				<div class="form-group">
@@ -157,11 +157,9 @@
 		
 	</div></div>
 </div>
-<!--Fin de faire entrer le lien  -->
 
 <!--Visuel des liens -->
-
-<div class="blocvisuel" id="allbloc">
+<div class="blocvisuel" id="carouselbloc">
 <div class="container-xl">
 	<h2 class="entete">Visulisez votre galerie</h2>
 	<div class="row">
@@ -200,17 +198,15 @@
 	</div>
 </div>
 </div>
-
+<div class="blocvisuel" id="igpostsbloc">
+	<h2 class="entete">Visulisez votre galerie</h2>
+       <div class="instagramposts" id="instagramposts">
+                        <div class="row" id="rowigposts">
+                            </div>              
+        </div>
+</div>
 <!--Fin de visuel des liens  -->
-
-
-
-
-
-
-
 </body>
-
 <script src="jQueryb.js"></script>
 <script src="Animations.js"></script>
 <script src="list.js"></script>
