@@ -51,7 +51,7 @@ height.innerHTML=`Hauteur = ${dimension.value}pixels`;
 let currentrow = 1;
 
 
-
+console.log(typesoumis.value)
 
 
 //Fonctions principales 
@@ -219,7 +219,10 @@ function creerThumbwrapper(){
 
 
 //Afficher cacher elements
- 
+function choisiraffichage(typesoumis)
+{
+    document.getElementById('igpostsbloc').style.display = typesoumis.value == 'carousel' ? 'block' : 'none';
+}
 
 
 
