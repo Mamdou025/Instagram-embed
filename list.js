@@ -50,12 +50,22 @@ function creerunproduit(){
   if( (String(liensoumis.value).length)>40){
  
     url=(String(liensoumis.value)).substring(0,40)
-    console.log(url)
+   
     
-  }else{
+  
+  
+  
+  }else if(liensoumis.value ==='') {
+
+   url ="https://www.instagram.com/p/CV0almdPMAz/"
+
+  }
+  else {
     url=liensoumis.value
    
   }
+ 
+
     const carteInstagramcree = new carteInstagram(url);
     //mettre sur la liste 
     produits.push(carteInstagramcree);
@@ -71,9 +81,10 @@ function updatedimensions(){
       thumbwrappercss[i].style.height= `${dimension.value}px`;
 
       //taille des IG posts 
-      //igposts[i].style.height=`${dimension.value}px`;
+      igposts[i].style.height=`${dimension.value}px`;
 
     }
+    
 
    codesnipet.value=`<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
    box-shadow:3px 6px rgb(116, 112, 112);
@@ -81,7 +92,7 @@ function updatedimensions(){
    margin: 0 auto;
      " ><iframe class="instagram-media instagram-media-rendered" style="height:95%;
    width:95%;
-   position:relative;" id="instagram-embed-0" src="${produits.at(-1).lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
+   position:relative;" id="instagram-embed-0" src="${produits[produits.length-1].lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
    
 
  
@@ -110,16 +121,16 @@ function creerpost(){
    igpost = document.createElement('div')
       igpost.classList.add('igpost')
 
+      
+
 
       rowigposts= document.getElementById('rowigposts')
         rowigposts.prepend(colone)
            colone.appendChild(igpost)
 
            // inclure le post dans la page 
-      igposts[0].innerHTML = produits.at(-1).affichage;
+      igposts[0].innerHTML = produits[produits.length-1].affichage;
     
-     
-
 
 }
 
@@ -191,6 +202,9 @@ function choisiraffichage(){
     }
 }
 
+
+
+
 // déclencheurs et fonction
 choisiraffichage();
 
@@ -200,21 +214,36 @@ typesoumis.oninput=choisiraffichage;
 Ajouter.onclick=()=>{
 
 
+
+
+
+
+   //creer un produit 
+   creerunproduit();
+
+
+   //Creer post pour carousel
+   creerThumbwrapper();
+   //Creer Post pour igposts    
+       creerpost();
+
+
   //choisir affichage
   choisiraffichage();
 
 
-  //creer un produit 
-   creerunproduit();
+ 
   //cree les elements de la liste
 
-  //Creer post pour carousel
-      creerThumbwrapper();
-  //Creer Post pour igposts    
-      creerpost();
+  
   //changer hauteur    
       updatedimensions();
-      
+
+
+
+
+
+  
 
 }
 

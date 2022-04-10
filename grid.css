@@ -55,4 +55,12 @@
     margin-top: 15px;
 }
   
- 
+ #igpostsbloc {
+    padding: 10px;
+    margin-top: 40px;
+    /* background: #ebebeb; */
+    font-family: "Open Sans", sans-serif;
+    border-radius: 30px;
+    width: 98%;
+    margin: 30px auto;
+}
