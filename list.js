@@ -50,6 +50,7 @@ function creerunproduit(){
   if( (String(liensoumis.value).length)>40){
  
     url=(String(liensoumis.value)).substring(0,40)
+    console.log(url)
     
   }else{
     url=liensoumis.value
@@ -103,7 +104,8 @@ function creerpost(){
 
   //creer colone 4
  colone = document.createElement('div')
-   colone.classList.add('col-4')
+   //colone.classList.add('col-4')
+   colone.classList.add('col-md-4')
    //creer Igpostt 
    igpost = document.createElement('div')
       igpost.classList.add('igpost')
