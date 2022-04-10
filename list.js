@@ -71,7 +71,7 @@ function updatedimensions(){
       thumbwrappercss[i].style.height= `${dimension.value}px`;
 
       //taille des IG posts 
-      igposts[i].style.height=`${dimension.value}px`;
+      //igposts[i].style.height=`${dimension.value}px`;
 
     }
 
