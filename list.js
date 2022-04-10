@@ -1,37 +1,17 @@
-class carteInstagram {
-    constructor(lien){
-        this.lien=lien;
-        this.affichage =`<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${this.lien}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`;
-      
-    }
 
-    
-}
-//liste de produits 
 
-var produits = []
-// creer un produit a partir de la class
-//const produit1 = new carteInstagram('https://www.instagram.com/p/CcDfi10Lka4/')
-//produits.push(produit1);
-//console.log(produits)
-//elements de la page 
-
-const titresoumis = document.getElementById('titresoumis');
-const descriptionsoumise =document.getElementById('descriptionsoumise');
-const prixsoumis =document.getElementById('prixsoumis');
 const liensoumis =document.getElementById('liensoumis');
 const typesoumis =document.getElementById('typesoumis');
 const Ajouter = document.getElementById('btnajouter');
-const Contacter = document.getElementById('bt')
 const codesnipet =  document.getElementById('codesnipet')
 const thumbwrapper0 =document.getElementById('thumb-wrapper0')
-const ajouterelement =  document.getElementById('ajouterelement')
 const copier = document.getElementById('copier')
 const dimension = document.getElementById('dimension')
 const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
 const width =document.querySelector('.dimensionstw')
 const carouselbloc = document.getElementById('carouselbloc')
+const typelogo=document.getElementById('typelogo')
 //carousell 
 const carouselindic = document.getElementById('carousel-indicators')
 const carousel= document.getElementById('carousel-inner')
@@ -42,24 +22,32 @@ const carousel= document.getElementById('carousel-inner')
      //elements IG posts
      igposts = document.getElementsByClassName('igpost')
 
-
-
-
  //Elements d'entrée     
 width.innerHTML = `Epaisseur = ${dimensionw.value}%`;
 height.innerHTML=`Hauteur = ${dimension.value}pixels`;
 let currentrow = 1;
 
-
-console.log(typesoumis.value)
-
-
 //Fonctions principales 
+
+
+//creation de carte
+class carteInstagram {
+  constructor(lien){
+      this.lien=lien;
+      this.affichage =`<div class ="bloco"><iframe class="instagram-media instagram-media-rendered" id="instagram-embed-0" src="${this.lien}embed/captioned/?cr=1&amp;v=14&amp;wp=243&amp;rd=http%3A%2F%2Flocalhost%3A5500&amp;rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`;
+    
+  }
+
+  
+}
+//liste de produits 
+
+var produits = []
 
 //creer une nouvelle carte
 function creerunproduit(){
   //verifie le lien 
-  if( String(liensoumis.value).includes('copy')){
+  if( (String(liensoumis.value).length)>40){
  
     url=(String(liensoumis.value)).substring(0,40)
     
@@ -125,11 +113,7 @@ function creerpost(){
         rowigposts.prepend(colone)
            colone.appendChild(igpost)
 
-
-
-
            // inclure le post dans la page 
-           
       igposts[0].innerHTML = produits.at(-1).affichage;
     
      
@@ -151,59 +135,35 @@ function creerThumbwrapper(){
        listitem.setAttribute("data-target","#mycarousel");
        listitem.setAttribute("data-slide-to",`${((produits.length-1)/3)}`)
 
-  
   carouselindic.appendChild(listitem)
-
-
-
   //Creer des row 
 
   div1 = document.createElement('div')
     div1.classList.add('carousel-item')
-    //if(produits.length%3===1)
+    
        div2 = document.createElement('div')
        div2.classList.add('row')
 
-       
        div2.id=`row${currentrow}`
-
-
-
        //test 
        carousel.appendChild(div1)
        div1.appendChild(div2)
-          
-
-         
-
+      
   }
   
 //creer un nouveau Thumbwrapper
-
-
-    
          div3 = document.createElement('div')
          div3.classList.add('col-lg-4')
            div4 = document.createElement('div')
            div4.classList.add('thumb-wrapper')
            div4.id=`thumb-wrapper${(produits.length)-1}`
 
-
                div3.appendChild(div4)
-
-
               row=document.getElementById(`row${currentrow}`)
-               
-
-               row.appendChild(div3)
-               
+               row.appendChild(div3)           
                //afficher les elements sur la page 
-               produits.forEach(element => {
-
-      
-      
-                const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)
-                
+               produits.forEach(element => {     
+                const cage =document.getElementById(`thumb-wrapper${produits.indexOf(element)}`)        
                 cage.innerHTML= produits[produits.indexOf(element)].affichage;
                
                 
@@ -211,28 +171,36 @@ function creerThumbwrapper(){
                
 }
 
-
-
-
-
-
-
-
 //Afficher cacher elements
-function choisiraffichage(typesoumis)
-{
-    document.getElementById('igpostsbloc').style.display = typesoumis.value == 'carousel' ? 'block' : 'none';
+function choisiraffichage(){
+    document.getElementById('igpostsbloc').style.display = typesoumis.value == 'Grid' ? 'block' : 'none';
+    document.getElementById('carouselbloc').style.display = typesoumis.value == 'Carousel' ? 'block' : 'none';
+
+
+    
+    switch(typesoumis.value){
+      case 'Grid':
+        typelogo.className="bi bi-grid-3x3"
+        break;
+        case 'Carousel':
+        typelogo.className="bi bi-layout-split"
+        break;
+       
+    }
 }
 
-
-
-
-
 // déclencheurs et fonction
+choisiraffichage();
 
 dimensionw.oninput=updatedimensions;
 dimension.oninput=updatedimensions;
+typesoumis.oninput=choisiraffichage;
 Ajouter.onclick=()=>{
+
+
+  //choisir affichage
+  choisiraffichage();
+
 
   //creer un produit 
    creerunproduit();
@@ -244,6 +212,7 @@ Ajouter.onclick=()=>{
       creerpost();
   //changer hauteur    
       updatedimensions();
+      
 
 }
 
