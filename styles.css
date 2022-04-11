@@ -205,7 +205,7 @@ body {
 	text-align: center;
 }	
 .signup-form .btn, .signup-form .btn:active {        
-	font-size: 16px;
+	font-size: 14px;
 	font-weight: bold;
 	background: linear-gradient(45deg, #405de6, #5851db, #8f2bd1, #8235c1, #e1306c, #fd1d1d);
 	border: none;
