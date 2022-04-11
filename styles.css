@@ -189,6 +189,9 @@ body {
 .signup-form .form-group {
 	margin-bottom: 20px;
 }
+#colcodesnipet .signup-form .form-group {
+	margin-bottom: 8px;
+}
 .signup-form label {
 	font-weight: normal;
 	font-size: 15px;
@@ -204,11 +207,30 @@ body {
 .signup-form .btn, .signup-form .btn:active {        
 	font-size: 16px;
 	font-weight: bold;
-	background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+	background: linear-gradient(45deg, #405de6, #5851db, #8f2bd1, #8235c1, #e1306c, #fd1d1d);
 	border: none;
 	min-width: 140px;
 	border-radius: 2rem;
 }
+
+
+#btneffacer{
+	font-size: 16px;
+	font-weight: bold;
+	background: linear-gradient(45deg, #ca1bca, #d651db, #a928b4, #ad2673, #e1306c, #fd1d1d);
+	border: none;
+	min-width: 140px;
+	border-radius: 2rem;
+}
+#btneffacer:hover{
+	font-size: 16px;
+	font-weight: bold;
+	background: linear-gradient(45deg, #881288, #823085, #59145f, #6d1748, #701835, #7a0e0e);
+	border: none;
+	min-width: 140px;
+	border-radius: 2rem;
+}
+
 .signup-form .btn:hover, .signup-form .btn:focus {
 	background:linear-gradient(90deg, #833ab4, #5851db,#405de6);
 }
@@ -281,4 +303,13 @@ body {
     margin: 0 auto;
     padding: 20px 0;
     border-radius: 40px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+}
+#buttons{
+	display: flex;
+	justify-content: space-between;
 }

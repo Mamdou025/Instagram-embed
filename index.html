@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="carousel.css">
 <link rel="stylesheet" href="grid.css">
+<link rel="icon" type="image/x-icon" href="/Images/favicon.png">
 
 <!--Liens pour carrousell -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans|Varela+Round">
@@ -90,21 +91,21 @@
 				
 		
 		<!--Fin de bloc des codes -->
-		<div class="form-group">
+		<div class="form-group" id="buttons">
 				<button class="btn btn-primary btn-lg" id="btnajouter">Ajouter Element </button>
+				<button class="btn btn-primary btn-lg  effacer" id="btneffacer">Tout Effacer</button>
 			</div>
+		
 			</form>
 			
 			
 		</div></div>
-	<div class="col-md-6">
+	<div class="col-md-6" id="colcodesnipet">
 		<h2 class="entete">Exportez le code</h2>
 		<div class="signup-form ">
 		<form onsubmit="return false" >
 			<h2>Code snippet </h2>
-			<p> type d'affichage </p>
-			
-			
+			<p> type d'affichage </p>	
 			<div class="form-group">
 				<div class="input-group">
 					<div class="input-group-prepend">
@@ -125,7 +126,7 @@
 	
 			<!--Bloc des codes -->
 			<p> code pour une seule carte </p>	
-	<div class="form-group">
+	  <div class="form-group">
 		<div class="input-group">
 		
 		
@@ -137,9 +138,6 @@
 		</div>
 	</div>
 	  </div>
-	<!--Fin de bloc des codes -->
-	<!--Bloc des codes -->
-
 	  <p> Iframe </p>	
 	  <div class="form-group">
 		  <div class="input-group">
@@ -153,6 +151,19 @@
 		  </div>
 	  </div>
 		</div>
+		<p> code HTML </p>	
+		<div class="form-group">
+					<div class="input-group">
+					
+					
+					<input readonly type="text" class="form-control" id="codesnipethtml" rows="4" >
+					<div class="input-group-prepend">
+						<span class="input-group-text">
+							<button  type="button"class="copier" id="copier3" value=""><i class="bi bi-clipboard" id="clip3"></i></button>
+						</span>                    
+					</div>
+				</div>
+				  </div>
 	<!--Fin de bloc des codes -->
 	
 		</form>
@@ -208,57 +219,7 @@
                             </div>              
         </div>
 </div>
-<div class="row"id="thirdrow">
-	<div class="col-md-1"></div>
-	<div class="col-md-10">
-		<h2 class="entete">Exportez le code complet </h2>
-		<div class="signup-form ">
-			<form onsubmit="return false"  >
-				<h2>Code   </h2>
-				<p> code HTML </p>	
-				<div class="form-group">
-					<div class="input-group">
-					
-					
-					<input readonly type="text" class="form-control" id="codesnipethtml" rows="4" >
-					<div class="input-group-prepend">
-						<span class="input-group-text">
-							<button  type="button"class="copier" id="copierhtml" value=""><i class="bi bi-clipboard" id="cliphtml"></i></button>
-						</span>                    
-					</div>
-				</div>
-				  </div>		
-				  
-				  
 
-
-
-
-				  <p> code  CSS </p>	
-				  <div class="form-group">
-					  <div class="input-group">
-					  
-					  
-					  <input readonly type="text" class="form-control" id="codesnipetcss" rows="4" >
-					  <div class="input-group-prepend">
-						  <span class="input-group-text">
-							  <button  type="button" class="copier" id="copiercss" value=""><i class="bi bi-clipboard" id="clipcss"></i></button>
-						  </span>                    
-					  </div>
-				  </div>
-					</div>
-
-
-					
-			</form>
-			
-		
-			
-			
-		</div>
-	</div>
-	<div class="col-md-1"></div>
-</div>
 <!--Fin de visuel des liens  -->
 </body>
 <script src="jQueryb.js"></script>

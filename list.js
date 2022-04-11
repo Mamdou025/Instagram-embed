@@ -2,16 +2,20 @@
 
 const liensoumis =document.getElementById('liensoumis');
 const typesoumis =document.getElementById('typesoumis');
+//button ajouter effacer
 const Ajouter = document.getElementById('btnajouter');
-
+const Effacer = document.getElementById('btneffacer')
+//elements de page
 const thumbwrapper0 =document.getElementById('thumb-wrapper0')
 const copier = document.getElementById('copier')
 const copier2 = document.getElementById('copier2')
+const copuer3 = document.getElementById('copier3')
 const dimension = document.getElementById('dimension')
 const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
 const width =document.querySelector('.dimensionstw')
 const carouselbloc = document.getElementById('carouselbloc')
+const instagrambloc=document.getElementById('igpostsbloc')
 const typelogo=document.getElementById('typelogo')
 //carousell 
 const carouselindic = document.getElementById('carousel-indicators')
@@ -19,8 +23,7 @@ const carousel= document.getElementById('carousel-inner')
 //code snipets 
 const codesnipet =  document.getElementById('codesnipet')
 const codesnipet2 =  document.getElementById('codesnipet2')
-const codesnipethtml = document.getElementById('codesnipethtml')
-const codesnipetcss = document.getElementById('codesnipetcss')
+const codesnipet3 = document.getElementById('codesnipethtml')
 
 
 //selectionner tous les elements 
@@ -105,7 +108,7 @@ function updatedimensions(){
    </div>`;
 
 // HTML ET CSS SUR LES GRANDES CASES 
- codesnipethtml.value = `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   codesnipet3.value = `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
  
@@ -275,6 +278,17 @@ function copiercode2() {
     /* Copy the text inside the text field */
     navigator.clipboard.writeText(codesnipet2.value);
 }
+function copiercode3() {
+  const clip3=document.getElementById('clip3')
+  clip3.className="bi bi-clipboard-check"
+  
+    /* Select the text field */
+    codesnipet3.select();
+    codesnipet3.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(codesnipet3.value);
+}
 
 //Creer Post pour igposts
 function creerpost(){
@@ -307,7 +321,6 @@ function creerThumbwrapper(){
   if(produits.length%3  === 1 && produits.length>1 ){
     currentrow ++;
     
-    console.log('Actuelle colone est '+ currentrow)
   
   //cree un autre bouton carrousel
   let listitem=document.createElement('li') 
@@ -372,43 +385,71 @@ function choisiraffichage(){
 choisiraffichage();
 copier.onclick=copiercode1;
 copier2.onclick=copiercode2;
+copier3.onclick=copiercode3;
+
 dimensionw.oninput=updatedimensions;
 dimension.oninput=updatedimensions;
 typesoumis.oninput=choisiraffichage;
 Ajouter.onclick=()=>{
 
-
-
-
-
-
    //creer un produit 
    creerunproduit();
-
-
    //Creer post pour carousel
    creerThumbwrapper();
    //Creer Post pour igposts    
        creerpost();
-
-
   //choisir affichage
   choisiraffichage();
-
-
- 
   //cree les elements de la liste
 
-  
   //changer hauteur    
       updatedimensions();
-
-
-
-
-
-  
-
+ 
+}
+Effacer.onclick=()=>{
+  produits=[]
+  carouselbloc.innerHTML=`<div class="container-xl">
+	<h2 class="entete">Visulisez votre galerie</h2>
+	<div class="row">
+		<div class="col-md-12 mx-auto"id="coloneprinc">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators"id="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				
+			
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner"  id="carousel-inner">
+				<div class="carousel-item active">
+					<div class="row"  id="row1">
+					<!--	<div class="col-lg-4">  -->
+					<!--	<div class="thumb-wrapper"id="thumb-wrapper0">      -->	
+														
+							
+						
+						
+						<!-- FIN THUMB WRAPPER-->
+					</div>
+				</div>
+				
+			</div>
+			<!-- Carousel controls -->
+			<a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+				<i class="fa fa-angle-left"></i>
+			</a>
+			<a class="carousel-control-next" href="#myCarousel" data-slide="next">
+				<i class="fa fa-angle-right"></i>
+			</a>
+		</div>
+		</div>
+	</div>
+</div>`
+instagrambloc.innerHTML=`<h2 class="entete">Visulisez votre galerie</h2>
+<div class="instagramposts" id="instagramposts">
+                 <div class="row" id="rowigposts">	
+                     </div>              
+ </div>`
 }
 
 
