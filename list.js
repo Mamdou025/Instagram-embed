@@ -3,9 +3,10 @@
 const liensoumis =document.getElementById('liensoumis');
 const typesoumis =document.getElementById('typesoumis');
 const Ajouter = document.getElementById('btnajouter');
-const codesnipet =  document.getElementById('codesnipet')
+
 const thumbwrapper0 =document.getElementById('thumb-wrapper0')
 const copier = document.getElementById('copier')
+const copier2 = document.getElementById('copier2')
 const dimension = document.getElementById('dimension')
 const dimensionw = document.getElementById('dimensionw')
 const height =document.querySelector('.dimensionsth')
@@ -15,6 +16,12 @@ const typelogo=document.getElementById('typelogo')
 //carousell 
 const carouselindic = document.getElementById('carousel-indicators')
 const carousel= document.getElementById('carousel-inner')
+//code snipets 
+const codesnipet =  document.getElementById('codesnipet')
+const codesnipet2 =  document.getElementById('codesnipet2')
+const codesnipethtml = document.getElementById('codesnipethtml')
+const codesnipetcss = document.getElementById('codesnipetcss')
+
 
 //selectionner tous les elements 
       //elements carousell
@@ -85,21 +92,168 @@ function updatedimensions(){
 
     }
     
-
+//faire rentrer les codes sur les petites cases
    codesnipet.value=`<div   style ="width: ${dimensionw.value}%;height:${dimension.value}px;border:1px solid rgb(26, 196, 41);
    box-shadow:3px 6px rgb(116, 112, 112);
    border-radius: 10px;
    margin: 0 auto;
      " ><iframe class="instagram-media instagram-media-rendered" style="height:95%;
    width:95%;
-   position:relative;" id="instagram-embed-0" src="${produits[produits.length-1].lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`
+   position:relative;" id="instagram-embed-0" src="${produits[produits.length-1].lien}embed/captioned/?cr=1&v=14&wp=243&rd=http%3A%2F%2Flocalhost%3A5500&rp=%2FList.html#%7B%22ci%22%3A0%2C%22os%22%3A555.6000001430511%2C%22ls%22%3A353.10000014305115%2C%22le%22%3A388.10000014305115%7D" allowtransparency="true" allowfullscreen="true" frameborder="0"  data-instgrm-payload-id="instagram-media-payload-0"scrolling="no"</iframe></div>`;
    
+   codesnipet2.value= `<div><iframe src="${produits[produits.length-1].lien}embed" width="400" height="480" frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+   </div>`;
 
+// HTML ET CSS SUR LES GRANDES CASES 
+ codesnipethtml.value = `<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
  
+ <style>
+ .blocvisuel{
+     padding: 10px;
+  background: #ebebeb;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 30px;
+  width: 98%;
+  margin: 30px auto;
+ }
+ #carouselbloc .entete {
+     font-family: "billabong";
+     color: #333;
+     text-align: center;
+     padding-top: 6px;
+     padding: 5px;
+     margin-top: 15px;
+ }
+  #carouselbloc .row {
+    
+     display: flex;
+     flex-wrap: wrap;
+     margin-right: -15px;
+     margin-left: -15px;
+ }
+ #coloneprinc {
+     position: relative;
+     width: 100%;
+     padding-right: 5px;
+     padding-left: 5px;
+ }
+ #carouselbloc .carousel {
+     margin: 30px auto 60px;
+     padding: 0 5px;
+ }
+ .carousel-indicators {
+     bottom: -50px;
+ }
+ .carousel {
+   margin: 30px auto 60px;
+   padding: 0 5px;
+ }
+ .carousel .carousel-item {
+   text-align: center;
+   overflow: hidden;
+ }
+ .carousel .carousel-item h4 {
+   font-family: 'Varela Round', sans-serif;
+ }
+ .carousel .carousel-item img {
+   max-width: 100%;
+   display: inline-block;
+ }
+ .carousel .carousel-item .btn {
+   border-radius: 0;
+   font-size: 12px;
+   text-transform: uppercase;
+   font-weight: bold;
+   border: none;
+   background: #a177ff;
+   padding: 6px 15px;
+   margin-top: 5px;
+ }
+ .carousel .carousel-item .btn:hover {
+   background: #8c5bff;
+ }
+ .carousel .carousel-item .btn i {
+   font-size: 14px;
+   font-weight: bold;
+   margin-left: 5px;
+ }
+ .carousel .thumb-wrapper {
+   margin: 5px;
+   /*text-align: left;*/
+   background: #fff;
+   /*box-shadow: 0px 0px 0px rgba(0,0,0,0.1);  */
+     
+ }
+ .carousel .thumb-content {
+   padding: 15px;
+   font-size: 13px;
+ }
+ .carousel-control-prev i, .carousel-control-next i {
+   font-size: 36px;
+   position: absolute;
+   top: 50%;
+   display: inline-block;
+   margin: -19px 0 0 0;
+   z-index: 5;
+   left: 0;
+   right: 0;
+   color: rgba(0, 0, 0, 0.8);
+   text-shadow: none;
+   font-weight: bold;
+ }
+ .carousel-control-prev i {
+   margin-left: -3px;
+ }
+ .carousel-control-next i {
+   margin-right: -3px;
+ }
+ 
+ .carousel-indicators li, .carousel-indicators li.active {
+   width: 10px;
+   height: 10px;
+   border-radius: 50%;
+   margin: 4px;
+   border: none;
+ }
+ .carousel-indicators li {	
+   background: #e96ab8;
+ }
+ .carousel-indicators li.active {	
+   background: rgb(73, 82, 201);
+ }
+ .bloco{
+     width: 95%;
+     height:100%;
+   
+     border:1px solid #405de6;
+     box-shadow:2px 4px rgba(203, 88, 231, 0.37);
+     border-radius: 10px;
+     margin: 0 auto;
+       
+   }
+   .instagram-media.instagram-media-rendered{
+     height:95%;
+     width:95%;
+     position:relative;
+   }
+ 
+   .carousel-control-prev, .carousel-control-next {
+   height: 44px;
+   width: 44px;
+   background: none;	
+   margin: auto 0;
+   border-radius: 50%;
+   border: 3px solid rgba(0, 0, 0, 0.8);
+ }</style>
+ <link rel="stylesheet" href="grid.css"><div class="blocvisuel" id="carouselbloc">${carouselbloc.innerHTML}</div>`;
+
+
 }
 
 //copier le texte du code snipet
-copier.onclick=()=> {
+function copiercode1() {
   const clip1=document.getElementById('clip1')
   clip1.className="bi bi-clipboard-check"
   
@@ -110,13 +264,25 @@ copier.onclick=()=> {
     /* Copy the text inside the text field */
     navigator.clipboard.writeText(codesnipet.value);
 }
+function copiercode2() {
+  const clip2=document.getElementById('clip2')
+  clip2.className="bi bi-clipboard-check"
+  
+    /* Select the text field */
+    codesnipet2.select();
+    codesnipet2.setSelectionRange(0, 99999); /* For mobile devices */
+  
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(codesnipet2.value);
+}
+
 //Creer Post pour igposts
 function creerpost(){
 
   //creer colone 4
  colone = document.createElement('div')
-   //colone.classList.add('col-4')
-   colone.classList.add('col-md-4')
+   colone.classList.add('col-4')
+   //colone.classList.add('col-md-4')
    //creer Igpostt 
    igpost = document.createElement('div')
       igpost.classList.add('igpost')
@@ -202,12 +368,10 @@ function choisiraffichage(){
     }
 }
 
-
-
-
 // déclencheurs et fonction
 choisiraffichage();
-
+copier.onclick=copiercode1;
+copier2.onclick=copiercode2;
 dimensionw.oninput=updatedimensions;
 dimension.oninput=updatedimensions;
 typesoumis.oninput=choisiraffichage;
